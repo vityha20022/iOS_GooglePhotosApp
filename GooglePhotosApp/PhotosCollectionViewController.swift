@@ -9,6 +9,7 @@ import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
     
+    private var photos = [GooglePhoto]()
     private let itemPerRow: CGFloat = 2
     private let sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     
@@ -97,7 +98,7 @@ extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
         let paddingSpace = sectionInsets.left * (itemPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemPerRow
-        let height = CGFloat(photo.height) * widthPerItem / CGFloat(photo.width)
+        let height = CGFloat(photo.original_height) * widthPerItem / CGFloat(photo.original_width)
         return CGSize(width: widthPerItem, height: height)
     }
 
