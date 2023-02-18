@@ -13,9 +13,13 @@
 		97FC453D29A0FD7500227162 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97FC453B29A0FD7500227162 /* Main.storyboard */; };
 		97FC453F29A0FD7600227162 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97FC453E29A0FD7600227162 /* Assets.xcassets */; };
 		97FC454229A0FD7600227162 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97FC454029A0FD7600227162 /* LaunchScreen.storyboard */; };
+		97FC454A29A1392F00227162 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC454929A1392F00227162 /* PhotosCollectionViewController.swift */; };
+		97FC454C29A13F9B00227162 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC454B29A13F9B00227162 /* PhotosCollectionViewCell.swift */; };
+		B368B01252BE2799E205F23E /* Pods_GooglePhotosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5DF74A39C8A9F41692D761 /* Pods_GooglePhotosApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F788D0CA3CB56448D0A9672 /* Pods-GooglePhotosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePhotosApp.release.xcconfig"; path = "Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp.release.xcconfig"; sourceTree = "<group>"; };
 		97FC453229A0FD7500227162 /* GooglePhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooglePhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FC453529A0FD7500227162 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97FC453729A0FD7500227162 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,10 @@
 		97FC453E29A0FD7600227162 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97FC454129A0FD7600227162 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97FC454329A0FD7600227162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97FC454929A1392F00227162 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		97FC454B29A13F9B00227162 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		A644B17F67F605FE86DFF6EC /* Pods-GooglePhotosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePhotosApp.debug.xcconfig"; path = "Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CB5DF74A39C8A9F41692D761 /* Pods_GooglePhotosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GooglePhotosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B368B01252BE2799E205F23E /* Pods_GooglePhotosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				97FC453429A0FD7500227162 /* GooglePhotosApp */,
 				97FC453329A0FD7500227162 /* Products */,
+				F9595D8A89ECCBD2A51476D1 /* Pods */,
+				AE5077E531DC0F36381E231F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +70,31 @@
 				97FC453529A0FD7500227162 /* AppDelegate.swift */,
 				97FC453729A0FD7500227162 /* SceneDelegate.swift */,
 				97FC453929A0FD7500227162 /* ViewController.swift */,
+				97FC454929A1392F00227162 /* PhotosCollectionViewController.swift */,
 				97FC453B29A0FD7500227162 /* Main.storyboard */,
 				97FC453E29A0FD7600227162 /* Assets.xcassets */,
 				97FC454029A0FD7600227162 /* LaunchScreen.storyboard */,
 				97FC454329A0FD7600227162 /* Info.plist */,
+				97FC454B29A13F9B00227162 /* PhotosCollectionViewCell.swift */,
 			);
 			path = GooglePhotosApp;
+			sourceTree = "<group>";
+		};
+		AE5077E531DC0F36381E231F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB5DF74A39C8A9F41692D761 /* Pods_GooglePhotosApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9595D8A89ECCBD2A51476D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A644B17F67F605FE86DFF6EC /* Pods-GooglePhotosApp.debug.xcconfig */,
+				3F788D0CA3CB56448D0A9672 /* Pods-GooglePhotosApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97FC454629A0FD7600227162 /* Build configuration list for PBXNativeTarget "GooglePhotosApp" */;
 			buildPhases = (
+				51689EAC88F19454565671F0 /* [CP] Check Pods Manifest.lock */,
 				97FC452E29A0FD7500227162 /* Sources */,
 				97FC452F29A0FD7500227162 /* Frameworks */,
 				97FC453029A0FD7500227162 /* Resources */,
+				91D0495DAEAE356967F469D1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +165,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		51689EAC88F19454565671F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GooglePhotosApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91D0495DAEAE356967F469D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		97FC452E29A0FD7500227162 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				97FC453A29A0FD7500227162 /* ViewController.swift in Sources */,
+				97FC454C29A13F9B00227162 /* PhotosCollectionViewCell.swift in Sources */,
 				97FC453629A0FD7500227162 /* AppDelegate.swift in Sources */,
 				97FC453829A0FD7500227162 /* SceneDelegate.swift in Sources */,
+				97FC454A29A1392F00227162 /* PhotosCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +358,7 @@
 		};
 		97FC454729A0FD7600227162 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A644B17F67F605FE86DFF6EC /* Pods-GooglePhotosApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +387,7 @@
 		};
 		97FC454829A0FD7600227162 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F788D0CA3CB56448D0A9672 /* Pods-GooglePhotosApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
