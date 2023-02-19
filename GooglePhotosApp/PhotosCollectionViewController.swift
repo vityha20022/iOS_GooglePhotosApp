@@ -8,26 +8,23 @@
 import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
+    
     let networkDataFetcher = NetworkDataFetcher()
+    private var timer: Timer?
+    
     private var photos = [GooglePhoto]()
+    private let placeholderString = "Start looking please... 👀"
+    
     private let itemPerRow: CGFloat = 2
     private let sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
         setupCollectionView()
         setupNavigationBar()
         setupSearchBar()
-        
-        networkDataFetcher.fetchPhotos(searchTerm: "a") { [weak self] data, error in
-            if let fetchedPhotos = data {
-                self?.photos = fetchedPhotos.images_results
-                self?.collectionView.reloadData()
-            }
-        }
-        
+        collectionView.setMessage(placeholderString)
     }
     
     private func setupCollectionView() {
@@ -77,26 +74,32 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 extension PhotosCollectionViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        /*timer?.invalidate()
+        timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             if !searchText.isEmpty {
-                self.networkDataFetcher.fetchSearchImages(searchTerm: searchText) { [weak self] searchResults in
-                    guard let fetchedPhotos = searchResults else {
-                        return
+                self.collectionView.setActivityIndicator()
+                self.networkDataFetcher.fetchPhotos(searchTerm: searchText) { [weak self] data, error in
+                    self?.collectionView.removeBackgroundView()
+                    if let fetchedPhotos = data {
+                        self?.collectionView.removeBackgroundView()
+                        self?.photos = fetchedPhotos.images_results
+                        self?.collectionView.reloadData()
                     }
-                    self?.photos = fetchedPhotos.results
-                    self?.collectionView.reloadData()
                 }
             } else {
-                self.photos = self.randomPhotos
+                self.photos = []
                 self.collectionView.reloadData()
+                
+                self.collectionView.setMessage(self.placeholderString)
             }
-        })*/
+        })
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        //self.photos = self.randomPhotos
-        //self.collectionView.reloadData()
+        photos = []
+        collectionView.reloadData()
+        
+        collectionView.setMessage(placeholderString)
     }
 }
 
@@ -122,5 +125,28 @@ extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+}
+
+extension UICollectionView {
+    func setMessage(_ message: String) {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        messageLabel.text = message
+        messageLabel.textColor = .lightGray
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.sizeToFit()
+
+        self.backgroundView = messageLabel
+    }
+    
+    func removeBackgroundView() {
+        self.backgroundView = nil
+    }
+    
+    func setActivityIndicator() {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        self.backgroundView = activityIndicator
+        activityIndicator.startAnimating()
     }
 }
