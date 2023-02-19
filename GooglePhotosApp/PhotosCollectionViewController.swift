@@ -8,7 +8,7 @@
 import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
-    
+    let networkDataFetcher = NetworkDataFetcher()
     private var photos = [GooglePhoto]()
     private let itemPerRow: CGFloat = 2
     private let sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -16,32 +16,24 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .red
         setupCollectionView()
         setupNavigationBar()
         setupSearchBar()
+        
+        networkDataFetcher.fetchPhotos(searchTerm: "a") { [weak self] data, error in
+            if let fetchedPhotos = data {
+                self?.photos = fetchedPhotos.images_results
+                self?.collectionView.reloadData()
+            }
+        }
+        
     }
     
     private func setupCollectionView() {
-        //collectionView.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: PhotosCollectionViewCell.reuseId)
         collectionView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.contentInsetAdjustmentBehavior = .automatic
         collectionView.keyboardDismissMode = .onDrag
-
-        /*activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(activityIndicator)
-        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        activityIndicator.startAnimating()
-
-        networkDataFetcher.fetchRandomImages { [weak self] randomResults in
-            self?.activityIndicator.stopAnimating()
-            guard let fetchedPhotos = randomResults else {
-                return
-            }
-            self?.photos = fetchedPhotos
-            self?.randomPhotos = fetchedPhotos
-            self?.collectionView.reloadData()
-        }*/
     }
     
     private func setupNavigationBar() {
@@ -60,6 +52,24 @@ class PhotosCollectionViewController: UICollectionViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
+    }
+    
+    // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        photos.count
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // click
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCollectionViewCell", for: indexPath) as! PhotosCollectionViewCell
+        let googlePhoto = photos[indexPath.item]
+        cell.googlePhoto = googlePhoto
+
+        return cell
     }
 }
 

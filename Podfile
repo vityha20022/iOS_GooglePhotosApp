@@ -7,5 +7,6 @@ target 'GooglePhotosApp' do
 
   # Pods for GooglePhotosApp
 pod 'Alamofire'
+pod 'SDWebImage', '~> 5.0'
 	
 end

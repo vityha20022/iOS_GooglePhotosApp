@@ -14,8 +14,10 @@
 		97FC453F29A0FD7600227162 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97FC453E29A0FD7600227162 /* Assets.xcassets */; };
 		97FC454229A0FD7600227162 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97FC454029A0FD7600227162 /* LaunchScreen.storyboard */; };
 		97FC454A29A1392F00227162 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC454929A1392F00227162 /* PhotosCollectionViewController.swift */; };
-		97FC454C29A13F9B00227162 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC454B29A13F9B00227162 /* PhotosCollectionViewCell.swift */; };
 		97FC454E29A142B500227162 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC454D29A142B500227162 /* PhotoModel.swift */; };
+		97FC455029A1763700227162 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC454F29A1763700227162 /* NetworkDataFetcher.swift */; };
+		97FC455329A2661A00227162 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC455129A2661A00227162 /* PhotosCollectionViewCell.swift */; };
+		97FC455429A2661A00227162 /* PhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97FC455229A2661A00227162 /* PhotosCollectionViewCell.xib */; };
 		B368B01252BE2799E205F23E /* Pods_GooglePhotosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5DF74A39C8A9F41692D761 /* Pods_GooglePhotosApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,8 +32,10 @@
 		97FC454129A0FD7600227162 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97FC454329A0FD7600227162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97FC454929A1392F00227162 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
-		97FC454B29A13F9B00227162 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		97FC454D29A142B500227162 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		97FC454F29A1763700227162 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		97FC455129A2661A00227162 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		97FC455229A2661A00227162 /* PhotosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCollectionViewCell.xib; sourceTree = "<group>"; };
 		A644B17F67F605FE86DFF6EC /* Pods-GooglePhotosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePhotosApp.debug.xcconfig"; path = "Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CB5DF74A39C8A9F41692D761 /* Pods_GooglePhotosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GooglePhotosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,8 +81,10 @@
 				97FC453E29A0FD7600227162 /* Assets.xcassets */,
 				97FC454029A0FD7600227162 /* LaunchScreen.storyboard */,
 				97FC454329A0FD7600227162 /* Info.plist */,
-				97FC454B29A13F9B00227162 /* PhotosCollectionViewCell.swift */,
 				97FC454D29A142B500227162 /* PhotoModel.swift */,
+				97FC454F29A1763700227162 /* NetworkDataFetcher.swift */,
+				97FC455129A2661A00227162 /* PhotosCollectionViewCell.swift */,
+				97FC455229A2661A00227162 /* PhotosCollectionViewCell.xib */,
 			);
 			path = GooglePhotosApp;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97FC454229A0FD7600227162 /* LaunchScreen.storyboard in Resources */,
+				97FC455429A2661A00227162 /* PhotosCollectionViewCell.xib in Resources */,
 				97FC453F29A0FD7600227162 /* Assets.xcassets in Resources */,
 				97FC453D29A0FD7500227162 /* Main.storyboard in Resources */,
 			);
@@ -215,9 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97FC455029A1763700227162 /* NetworkDataFetcher.swift in Sources */,
+				97FC455329A2661A00227162 /* PhotosCollectionViewCell.swift in Sources */,
 				97FC454E29A142B500227162 /* PhotoModel.swift in Sources */,
 				97FC453A29A0FD7500227162 /* ViewController.swift in Sources */,
-				97FC454C29A13F9B00227162 /* PhotosCollectionViewCell.swift in Sources */,
 				97FC453629A0FD7500227162 /* AppDelegate.swift in Sources */,
 				97FC453829A0FD7500227162 /* SceneDelegate.swift in Sources */,
 				97FC454A29A1392F00227162 /* PhotosCollectionViewController.swift in Sources */,
@@ -376,6 +384,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,6 +414,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

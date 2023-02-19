@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct GooglePhotosSearchResult {
-    let images_result: [GooglePhoto]
+struct GooglePhotosSearchResult: Decodable {
+    let images_results: [GooglePhoto]
 }
 
-struct GooglePhoto: Codable {
+struct GooglePhoto: Decodable {
     let original: String
     let original_width: Int
     let original_height: Int
