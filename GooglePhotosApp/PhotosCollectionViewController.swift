@@ -58,12 +58,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photoVC = storyboard?.instantiateViewController(withIdentifier: "PhotoViewController") as! PhotoViewController
-        
-        photoVC.selectedIndex = indexPath.row
-        photoVC.photos = photos
-        
-        navigationController?.pushViewController(photoVC, animated: true)
+        performSegue(withIdentifier: "showPhotoSegue", sender: nil)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -72,6 +67,21 @@ class PhotosCollectionViewController: UICollectionViewController {
         cell.googlePhoto = googlePhoto
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhotoSegue" {
+            if let indexPaths = collectionView.indexPathsForSelectedItems {
+                let destinationController = segue.destination as! PhotoViewController
+                destinationController.selectedIndex = indexPaths[0].row
+                destinationController.photos = photos
+                collectionView.deselectItem(at: indexPaths[0], animated: false)
+            }
+        }
+    }
+    
+    @IBAction func unwindToMain(segue: UIStoryboardSegue){
+           
     }
 }
 

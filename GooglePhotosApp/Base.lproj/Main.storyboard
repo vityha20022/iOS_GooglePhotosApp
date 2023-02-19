@@ -113,6 +113,14 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.forward.fill" catalog="system"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaw-Ga-j7Q">
+                                <rect key="frame" x="348" y="69" width="35" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                                <connections>
+                                    <segue destination="TCw-zK-vDc" kind="unwind" unwindAction="unwindToMainWithSegue:" id="PbY-bv-bra"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4ek-T1-f5U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -121,16 +129,20 @@
                             <constraint firstItem="4Ni-ho-hCg" firstAttribute="leading" secondItem="4ek-T1-f5U" secondAttribute="leading" constant="50" id="E1v-xF-3Hv"/>
                             <constraint firstItem="xFK-9w-J0U" firstAttribute="leading" secondItem="4ek-T1-f5U" secondAttribute="leading" id="GWB-TZ-G2j"/>
                             <constraint firstItem="4Ni-ho-hCg" firstAttribute="leading" secondItem="xFK-9w-J0U" secondAttribute="trailing" id="HkI-qr-BEK"/>
+                            <constraint firstAttribute="trailing" secondItem="kaw-Ga-j7Q" secondAttribute="trailing" constant="10" id="KEK-Oi-ENa"/>
                             <constraint firstItem="4ek-T1-f5U" firstAttribute="trailing" secondItem="4Ni-ho-hCg" secondAttribute="trailing" constant="50" id="Kea-yf-e3r"/>
                             <constraint firstItem="4Ni-ho-hCg" firstAttribute="top" secondItem="4ek-T1-f5U" secondAttribute="top" id="LB3-ns-IOT"/>
                             <constraint firstItem="drs-Nx-aYp" firstAttribute="leading" secondItem="4Ni-ho-hCg" secondAttribute="trailing" id="YGk-jB-Ymy"/>
                             <constraint firstAttribute="trailing" secondItem="drs-Nx-aYp" secondAttribute="trailing" id="bM1-Nz-Sba"/>
+                            <constraint firstItem="kaw-Ga-j7Q" firstAttribute="leading" secondItem="4Ni-ho-hCg" secondAttribute="trailing" constant="5" id="c7X-hy-uJF"/>
                             <constraint firstItem="F5y-p2-dgr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4ek-T1-f5U" secondAttribute="leading" constant="10" id="cGE-f6-WXO"/>
+                            <constraint firstItem="drs-Nx-aYp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kaw-Ga-j7Q" secondAttribute="bottom" constant="300.66666666666663" id="cl0-Ms-8ER"/>
                             <constraint firstItem="4ek-T1-f5U" firstAttribute="trailing" secondItem="F5y-p2-dgr" secondAttribute="trailing" constant="30" id="eyq-5h-u2J"/>
                             <constraint firstItem="drs-Nx-aYp" firstAttribute="centerY" secondItem="4ek-T1-f5U" secondAttribute="centerY" id="gj5-cy-EWq"/>
                             <constraint firstItem="4ek-T1-f5U" firstAttribute="bottom" secondItem="F5y-p2-dgr" secondAttribute="bottom" constant="5" id="jQ4-uc-OBX"/>
                             <constraint firstItem="4ek-T1-f5U" firstAttribute="bottom" secondItem="4Ni-ho-hCg" secondAttribute="bottom" constant="50" id="rmN-N2-tVW"/>
                             <constraint firstItem="xFK-9w-J0U" firstAttribute="centerY" secondItem="4ek-T1-f5U" secondAttribute="centerY" id="wl8-e6-hix"/>
+                            <constraint firstItem="kaw-Ga-j7Q" firstAttribute="top" secondItem="4ek-T1-f5U" secondAttribute="top" constant="10" id="zpE-R8-wbu"/>
                         </constraints>
                     </view>
                     <connections>
@@ -138,6 +150,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGz-mq-yJq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="TCw-zK-vDc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2395" y="-673"/>
         </scene>
@@ -145,6 +158,7 @@
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
         <image name="arrowshape.turn.up.forward.fill" catalog="system" width="128" height="104"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
