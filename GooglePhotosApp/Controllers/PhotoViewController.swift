@@ -93,6 +93,6 @@ class PhotoViewController: UIViewController {
     }
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {
-           
+        print("clicked")
     }
 }
