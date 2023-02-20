@@ -19,6 +19,7 @@
 		97FC455329A2661A00227162 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC455129A2661A00227162 /* PhotosCollectionViewCell.swift */; };
 		97FC455429A2661A00227162 /* PhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97FC455229A2661A00227162 /* PhotosCollectionViewCell.xib */; };
 		97FC455629A2CEC000227162 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC455529A2CEC000227162 /* PhotoViewController.swift */; };
+		97FC455929A2FE3400227162 /* PhotoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC455829A2FE3400227162 /* PhotoWebViewController.swift */; };
 		B368B01252BE2799E205F23E /* Pods_GooglePhotosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5DF74A39C8A9F41692D761 /* Pods_GooglePhotosApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		97FC455129A2661A00227162 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		97FC455229A2661A00227162 /* PhotosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCollectionViewCell.xib; sourceTree = "<group>"; };
 		97FC455529A2CEC000227162 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		97FC455829A2FE3400227162 /* PhotoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWebViewController.swift; sourceTree = "<group>"; };
 		A644B17F67F605FE86DFF6EC /* Pods-GooglePhotosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooglePhotosApp.debug.xcconfig"; path = "Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CB5DF74A39C8A9F41692D761 /* Pods_GooglePhotosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GooglePhotosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 				97FC455129A2661A00227162 /* PhotosCollectionViewCell.swift */,
 				97FC455229A2661A00227162 /* PhotosCollectionViewCell.xib */,
 				97FC455529A2CEC000227162 /* PhotoViewController.swift */,
+				97FC455829A2FE3400227162 /* PhotoWebViewController.swift */,
 			);
 			path = GooglePhotosApp;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97FC455029A1763700227162 /* NetworkDataFetcher.swift in Sources */,
+				97FC455929A2FE3400227162 /* PhotoWebViewController.swift in Sources */,
 				97FC455329A2661A00227162 /* PhotosCollectionViewCell.swift in Sources */,
 				97FC454E29A142B500227162 /* PhotoModel.swift in Sources */,
 				97FC453A29A0FD7500227162 /* ViewController.swift in Sources */,

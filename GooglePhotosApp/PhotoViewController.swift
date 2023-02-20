@@ -58,6 +58,9 @@ class PhotoViewController: UIViewController {
         selectedIndex += 1
         setupUIElemnts()
     }
+    @IBAction func showSourcieWevPageButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "showWebViewSegue", sender: nil)
+    }
     
     @IBAction func handleRightSwipe(_ sender: Any) {
         if prevPhotoButton.isEnabled {
@@ -71,6 +74,17 @@ class PhotoViewController: UIViewController {
             selectedIndex += 1
             setupUIElemnts()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWebViewSegue" {
+            let destinationController = segue.destination as! PhotoWebViewController
+            destinationController.url = photos[selectedIndex].link
+        }
+    }
+    
+    @IBAction func unwindToMain(segue: UIStoryboardSegue) {
+           
     }
     /*@IBAction func handleLeftSwipe(_ sender: Any) {
         
