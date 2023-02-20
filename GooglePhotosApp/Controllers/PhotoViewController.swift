@@ -10,7 +10,6 @@ import SDWebImage
 
 class PhotoViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var showSourceWebPageButton: UIButton!
     @IBOutlet weak var prevPhotoButton: UIButton!
     @IBOutlet weak var nextPhotoButton: UIButton!
     

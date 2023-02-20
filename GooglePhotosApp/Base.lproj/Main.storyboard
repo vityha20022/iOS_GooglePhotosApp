@@ -164,7 +164,6 @@
                         <outlet property="nextPhotoButton" destination="drs-Nx-aYp" id="WD8-dE-bbg"/>
                         <outlet property="photoImageView" destination="4Ni-ho-hCg" id="sXO-lf-fd6"/>
                         <outlet property="prevPhotoButton" destination="xFK-9w-J0U" id="3tJ-sz-8cE"/>
-                        <outlet property="showSourceWebPageButton" destination="F5y-p2-dgr" id="3M8-9u-Fo9"/>
                         <segue destination="Fdv-jo-3Qg" kind="show" identifier="showWebViewSegue" id="coG-ML-HNo"/>
                     </connections>
                 </viewController>
