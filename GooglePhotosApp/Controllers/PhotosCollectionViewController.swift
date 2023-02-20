@@ -9,7 +9,7 @@ import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
     
-    let networkDataFetcher = NetworkDataFetcher()
+    private let networkDataFetcher = NetworkDataFetcher()
     private var timer: Timer?
     
     private var photos = [GooglePhoto]()
@@ -17,6 +17,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     private let itemPerRow: CGFloat = 2
     private let sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class PhotosCollectionViewController: UICollectionViewController {
         setupSearchBar()
         collectionView.setMessage(placeholderString)
     }
+    
+    // MARK: - Setup UI Elements
     
     private func setupCollectionView() {
         collectionView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
@@ -68,6 +72,8 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         return cell
     }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhotoSegue" {
@@ -142,6 +148,8 @@ extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
         return sectionInsets.left
     }
 }
+
+// MARK: - UICollectionView
 
 extension UICollectionView {
     func setMessage(_ message: String) {
