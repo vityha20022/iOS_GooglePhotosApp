@@ -13,10 +13,19 @@ class PhotoViewController: UIViewController {
     var selectedIndex = 0
     var photos: [GooglePhoto] = []
     
+    @IBOutlet weak var showSourceWebPageButton: UIButton!
+    @IBOutlet weak var prevPhotoButton: UIButton!
+    @IBOutlet weak var nextPhotoButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupUIElemnts()
+    }
+    
+    private func setupUIElemnts() {
         setupPhotoImageView()
+        setupNavigationButtons()
     }
     
     private func setupPhotoImageView() {
@@ -28,14 +37,51 @@ class PhotoViewController: UIViewController {
         photoImageView.backgroundColor = .systemBackground
         photoImageView.contentMode = .scaleAspectFit
         photoImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        photoImageView.sd_setImage(with: url) { [weak self] image, error, cacheType, url in
-            if let _ = error {
+        photoImageView.sd_setImage(with: url) { [weak self] _, error, _, _ in
+            if error != nil {
                 self?.photoImageView.image = UIImage(systemName: "circle.slash")
             }
         }
     }
     
+    private func setupNavigationButtons() {
+        prevPhotoButton.isEnabled = selectedIndex > 0
+        nextPhotoButton.isEnabled = selectedIndex < photos.count - 1
+    }
 
+    @IBAction func prevButtonClicked(_ sender: Any) {
+        selectedIndex -= 1
+        setupUIElemnts()
+    }
+    
+    @IBAction func nextButtonClicked(_ sender: Any) {
+        selectedIndex += 1
+        setupUIElemnts()
+    }
+    
+    @IBAction func handleRightSwipe(_ sender: Any) {
+        if prevPhotoButton.isEnabled {
+            selectedIndex -= 1
+            setupUIElemnts()
+        }
+    }
+    
+    @IBAction func handleLeftSwipe(_ sender: Any) {
+        if nextPhotoButton.isEnabled {
+            selectedIndex += 1
+            setupUIElemnts()
+        }
+    }
+    /*@IBAction func handleLeftSwipe(_ sender: Any) {
+        
+    }
+    
+    @IBAction func handleRightSwipe(_ sender: Any) {
+        if prevPhotoButton.isEnabled {
+            selectedIndex -= 1
+            setupUIElemnts()
+        }
+    }*/
     /*
     // MARK: - Navigation
 

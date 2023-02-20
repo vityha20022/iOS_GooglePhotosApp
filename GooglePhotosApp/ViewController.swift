@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     let apiKey = "59b32ef71ea1ebb26d3bd1c4ecb19815714634ef306871d1b52420a793077af2"
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +28,4 @@ class ViewController: UIViewController {
         }*/
     }
 
-
 }
-

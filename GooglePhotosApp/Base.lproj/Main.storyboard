@@ -107,11 +107,17 @@
                                 <rect key="frame" x="0.0" y="403.66666666666669" width="50" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="prevButtonClicked:" destination="Mif-Ku-3EH" eventType="touchUpInside" id="oKg-qx-gwT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drs-Nx-aYp">
                                 <rect key="frame" x="343" y="404" width="50" height="34.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.forward.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="nextButtonClicked:" destination="Mif-Ku-3EH" eventType="touchUpInside" id="uTd-pw-cSH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaw-Ga-j7Q">
                                 <rect key="frame" x="348" y="69" width="35" height="34.333333333333343"/>
@@ -124,6 +130,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4ek-T1-f5U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="F5y-p2-dgr" firstAttribute="top" secondItem="4Ni-ho-hCg" secondAttribute="bottom" constant="8" symbolic="YES" id="CwM-fE-Kt2"/>
                             <constraint firstItem="4Ni-ho-hCg" firstAttribute="leading" secondItem="4ek-T1-f5U" secondAttribute="leading" constant="50" id="E1v-xF-3Hv"/>
@@ -144,13 +151,30 @@
                             <constraint firstItem="xFK-9w-J0U" firstAttribute="centerY" secondItem="4ek-T1-f5U" secondAttribute="centerY" id="wl8-e6-hix"/>
                             <constraint firstItem="kaw-Ga-j7Q" firstAttribute="top" secondItem="4ek-T1-f5U" secondAttribute="top" constant="10" id="zpE-R8-wbu"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cgF-1f-3NO" appends="YES" id="a5d-6E-162"/>
+                            <outletCollection property="gestureRecognizers" destination="lpD-LZ-yss" appends="YES" id="Yq2-cA-87p"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="nextPhotoButton" destination="drs-Nx-aYp" id="WD8-dE-bbg"/>
                         <outlet property="photoImageView" destination="4Ni-ho-hCg" id="sXO-lf-fd6"/>
+                        <outlet property="prevPhotoButton" destination="xFK-9w-J0U" id="3tJ-sz-8cE"/>
+                        <outlet property="showSourceWebPageButton" destination="F5y-p2-dgr" id="3M8-9u-Fo9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGz-mq-yJq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="TCw-zK-vDc" userLabel="Exit" sceneMemberID="exit"/>
+                <swipeGestureRecognizer direction="right" id="cgF-1f-3NO">
+                    <connections>
+                        <action selector="handleRightSwipe:" destination="Mif-Ku-3EH" id="ZKZ-0q-VTS"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="lpD-LZ-yss">
+                    <connections>
+                        <action selector="handleLeftSwipe:" destination="Mif-Ku-3EH" id="NBQ-yl-ZZk"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2395" y="-673"/>
         </scene>

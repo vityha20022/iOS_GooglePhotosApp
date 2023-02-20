@@ -121,6 +121,7 @@
 				97FC452F29A0FD7500227162 /* Frameworks */,
 				97FC453029A0FD7500227162 /* Resources */,
 				91D0495DAEAE356967F469D1 /* [CP] Embed Pods Frameworks */,
+				97FC455729A2F1E400227162 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -217,6 +218,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GooglePhotosApp/Pods-GooglePhotosApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		97FC455729A2F1E400227162 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

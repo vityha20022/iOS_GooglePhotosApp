@@ -16,15 +16,14 @@ class PhotosCollectionViewCell: UICollectionViewCell {
             guard let url = URL(string: photoUrl) else {
                 return
             }
-            
 
             photoImageView.backgroundColor = .systemBackground
             photoImageView.layer.cornerRadius = 16
             photoImageView.layer.masksToBounds = true
             photoImageView.contentMode = .scaleAspectFit
             photoImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
-            photoImageView.sd_setImage(with: url) { [weak self] image, error, cacheType, url in
-                if let _ = error {
+            photoImageView.sd_setImage(with: url) { [weak self] _, error, _, _ in
+                if error != nil {
                     self?.photoImageView.image = UIImage(systemName: "circle.slash")
                 }
             }
@@ -40,5 +39,3 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         photoImageView.sd_cancelCurrentImageLoad()
     }
 }
-
-

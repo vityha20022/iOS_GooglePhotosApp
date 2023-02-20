@@ -73,14 +73,14 @@ class PhotosCollectionViewController: UICollectionViewController {
         if segue.identifier == "showPhotoSegue" {
             if let indexPaths = collectionView.indexPathsForSelectedItems {
                 let destinationController = segue.destination as! PhotoViewController
-                destinationController.selectedIndex = indexPaths[0].row
                 destinationController.photos = photos
+                destinationController.selectedIndex = indexPaths[0].row
                 collectionView.deselectItem(at: indexPaths[0], animated: false)
             }
         }
     }
     
-    @IBAction func unwindToMain(segue: UIStoryboardSegue){
+    @IBAction func unwindToMain(segue: UIStoryboardSegue) {
            
     }
 }
@@ -93,7 +93,7 @@ extension PhotosCollectionViewController: UISearchBarDelegate {
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             if !searchText.isEmpty {
                 self.collectionView.setActivityIndicator()
-                self.networkDataFetcher.fetchPhotos(searchTerm: searchText) { [weak self] data, error in
+                self.networkDataFetcher.fetchPhotos(searchTerm: searchText) { [weak self] data, _ in
                     self?.collectionView.removeBackgroundView()
                     if let fetchedPhotos = data {
                         self?.collectionView.removeBackgroundView()
